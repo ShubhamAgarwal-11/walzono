@@ -11,11 +11,15 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
 app.use(cookieParser());
-const corsOptions = {
-    origin : "*",
-    credentials : true
-}
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin : "*",
+//     credentials : true
+// }
+// app.use(cors(corsOptions));
+app.options('*', cors({
+    origin: 'https://walzono.com',
+    credentials: true
+  }));
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 
