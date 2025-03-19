@@ -15,20 +15,26 @@ app.use(cookieParser());
 //     origin : "*",
 //     credentials : true
 // }
-// app.use(cors(corsOptions));
-// app.options('*', cors({
-//     origin: 'https://walzono.com',
-//     credentials: true
-//   }));
 
-app.use(cors());
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://walzono.com"); // Allow only walzono.com
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
+
+app.use(
+    cors({
+      origin: "https://walzono.com", // ✅ Allow only your frontend domain
+      credentials: true, // ✅ Allow cookies/auth headers
+      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ Allow specific HTTP methods
+      allowedHeaders: ["Content-Type", "Authorization"], // ✅ Allow custom headers
+    })
+  );
+  
+  // Optional: Handle Preflight Requests Manually
+  app.options("*", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "https://walzono.com");
+    res.header("Access-Control-Allow-Credentials", "true");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
-    next();
-});
-
+    res.sendStatus(200);
+  });
 
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
