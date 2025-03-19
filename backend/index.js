@@ -12,7 +12,7 @@ const cors = require('cors');
 
 app.use(cookieParser());
 const corsOptions = {
-    origin : "https://walzono-com.pages.dev/",
+    origin : "*",
     credentials : true
 }
 app.use(cors(corsOptions));
