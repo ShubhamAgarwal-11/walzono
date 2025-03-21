@@ -62,8 +62,9 @@ function ComingSoon() {
       })
       if(response.data.success){
         toast.success(response.data.message)
-        setEmail('');
-        return;
+        setEmail('')
+      }else{
+        toast.error(response.data.message)
       }
     } catch (error) {
       console.log(error)
