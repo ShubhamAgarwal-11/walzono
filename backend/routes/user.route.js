@@ -11,4 +11,5 @@ router.post('/user-register',userController.register);
 router.post('/login',userController.login);
 router.get('/logout',userController.logout);
 router.post('/contact',userController.contactUs);
+router.post('/notifyMe',userController.notifyMe)
 module.exports = router;

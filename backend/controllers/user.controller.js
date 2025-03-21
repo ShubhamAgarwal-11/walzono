@@ -309,3 +309,37 @@ exports.contactUs = async (req, res) => {
         }
 }
 
+
+exports.notifyMe = async (req, res) => {
+    const {email} = req.body;
+
+    if(!email){
+        return res.status(400).json({
+            success : false,
+            message : "Email required."
+        })
+    }
+
+    try {
+            const htmlContent = emailTemplate(email);
+            try {
+                await sendEmail('shubham2002jindal@gmail.com', "Email for Notify Me Form Walzono", htmlContent);
+                // res.status(200).json({ success: "Email sent successfully" });
+            } catch (error) {
+                return res.status(500).json({ 
+                    success: false,
+                    error: "Failed to send email"
+                });
+            }
+    
+            return res.status(200).json({
+                success: true,
+                message: "Thank you we will Notify you.",
+            });
+        } catch (error) {
+            return res.status(500).json({
+                success: false,
+                message: "Internal server error."
+            })
+        }
+}

@@ -18,7 +18,9 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             {/* <span className="text-white text-xl font-bold">LOGO</span> */}
-            <img className='w-full h-10' src="https://res.cloudinary.com/daf7blofc/image/upload/v1741770673/cwp848e43xs54hgttif1.png" alt="walzono-logo" />
+            <Link to={'/'}>
+              <img className='h-10 w-full rounded cursor-pointer'src="https://res.cloudinary.com/daf7blofc/image/upload/v1742589542/kl2suqvae1x3kp9pqi2x.png" alt="walzono-logo" />
+            </Link>
           </div>
 
           {/* Desktop Menu */}
