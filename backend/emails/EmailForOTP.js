@@ -89,7 +89,7 @@ const emailTemplateForOTP = (otp,name) => `
 <body>
     <div class="email-wrapper">
         <div class="header">
-            <img src="https://res.cloudinary.com/daf7blofc/image/upload/v1741717905/image_4_zhxs7e.png" class="logo" alt="WALZONO Logo">
+            <img src="https://res.cloudinary.com/daf7blofc/image/upload/v1742589542/kl2suqvae1x3kp9pqi2x.png" class="logo" alt="WALZONO Logo">
         </div>
         
         <div class="content">

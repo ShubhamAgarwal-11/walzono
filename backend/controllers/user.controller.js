@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const sendEmail = require('../config/mailer');
 const emailTemplate = require("../emails/EmailForInquiry");
+const emailTemplateForNotifyMe = require("../emails/EmailForNotifyMe");
 
 exports.register = async(req,res)=>{
     try{
@@ -321,7 +322,7 @@ exports.notifyMe = async (req, res) => {
     }
 
     try {
-            const htmlContent = emailTemplate(email);
+            const htmlContent = emailTemplateForNotifyMe(email);
             try {
                 await sendEmail('shubham2002jindal@gmail.com', "Email for Notify Me Form Walzono", htmlContent);
                 // res.status(200).json({ success: "Email sent successfully" });
