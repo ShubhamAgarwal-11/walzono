@@ -1,5 +1,4 @@
 const emailTemplateForNotifyMe = (email) => `
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
