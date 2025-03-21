@@ -41,7 +41,7 @@ const emailTemplateForNotifyMe = (email) => `
         <h2>New NotifyMe Subscription</h2>
         <p class="content">Hello Admin,</p>
         <p class="content">A new user has subscribed to the NotifyMe service.</p>
-        <p class="content"><strong>Email:</strong> {email}</p>
+        <p class="content"><strong>Email:</strong> ${email}</p>
         <p class="content">Please take the necessary actions to follow up.</p>
         <p class="footer">&copy; 2025 Walzono. All rights reserved.</p>
     </div>
