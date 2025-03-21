@@ -48,3 +48,5 @@ const emailTemplateForNotifyMe = (email) => `
 </body>
 </html>
 `;
+
+module.exports = emailTemplateForNotifyMe;

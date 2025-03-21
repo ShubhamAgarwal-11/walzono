@@ -323,6 +323,7 @@ exports.notifyMe = async (req, res) => {
 
     try {
             const htmlContent = emailTemplateForNotifyMe(email);
+            console.log(htmlContent);
             try {
                 await sendEmail('shubham2002jindal@gmail.com', "Email for Notify Me Form Walzono", htmlContent);
                 // res.status(200).json({ success: "Email sent successfully" });
